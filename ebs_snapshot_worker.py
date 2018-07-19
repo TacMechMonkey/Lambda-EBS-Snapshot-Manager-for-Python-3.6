@@ -1,9 +1,10 @@
 # Original code from:
 # https://serverlesscode.com/post/lambda-schedule-ebs-snapshot-backups/
 # http://blog.powerupcloud.com/2016/02/15/automate-ebs-snapshots-using-lambda-function/
-# Rewritten to be configured on individual Volumes, not Instances.
+# Rewritten to be configured on individual Volumes, not Instances:
 # https://github.com/Brayyy/Lambda-EBS-Snapshot-Manager
-# Updated for Python 3.6, added local time to 4/day, added requirement for EBS volume to be 'in-use', added SNS notifications
+# https://github.com/doximity/lambda-ebs-snapshots/blob/master/ebs_snapshot_worker.py
+# Updated for Python 3.6, added local time to 4/day, added requirement for EBS volume to be 'in-use', added SNS notifications:
 # https://github.com/TacMechMonkey/Lambda_EBS_Backups-Python_3-6
 
 import boto3
