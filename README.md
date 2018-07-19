@@ -1,8 +1,8 @@
 Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, with SNS (email, txt...) notifications.
 
- - To tag an EBS volume for backup, add a tag key: "Backup" with a value: how often to snapshot. Values for "Backup" key: Hourly, 4/day, Daily, Weekly, No
+ - To tag an EBS volume for backup, add a tag "LambdaBackup" for the daily function, or "LambdaArchive" for the monthly function, with a value of how often to snapshot. Values for "Backup" key: Hourly, 4/day, Daily, Weekly, No
 
- - Optionally, add the key "Retention" with the number of days to override the default amount in the function. Values for "Retention" key: (days)
+ - Optionally, add a "Retention" tag to EBS volumes with the number of days to override the default amount in the function. Values for "Retention" tag is in days, and only works for the daily function (the monthly function doesn't delete).
 
  - Snapshots will be created with a tag key: "Delete After", value: seconds to exists after creation. After this period, they're purged. If no key is set, they're purged after the default retention period you set.
 
