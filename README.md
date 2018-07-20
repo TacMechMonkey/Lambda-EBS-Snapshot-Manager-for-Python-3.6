@@ -21,6 +21,7 @@ Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, wit
 If you know a way to modify this to only snapshot volumes attached to running instances, please let me know.
 
 
+
 #### How to:
  - Create a new role with the IAM policy below 
  - Create Lambda function with below settings A
@@ -29,23 +30,27 @@ If you know a way to modify this to only snapshot volumes attached to running in
  - Add SNS topic and subscribe to it 
  - Checkout CloudWatch logs to confirm nil errors
 
+
 #### EBS Volume tagging example:
 
 ![Tagging Example](https://github.com/TacMechMonkey/Lambda_EBS_Backups-Python_3-6/blob/master/TaggingExample.PNG)
+
 
 
 #### SNS Email Example:
 
 ![SNS Email Example](https://github.com/TacMechMonkey/Lambda_EBS_Backups-Python_3-6/blob/master/EmailExample.jpg)
 
+
 #### Lambda config
  - Runtime: Python 3.6
  - Handler: lambda_function.lambda_handler or filename.lambda_handler
  - Role: As below
  - Memory: 128
- - Timeout: 5 sec
+ - Timeout: 360 sec
  - No VPC
  - Add an hourly trigger using "CloudWatch Events - Schedule" / cron(0 * ? * * *)
+
 
 #### IAM Lambda Role:
 
