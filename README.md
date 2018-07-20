@@ -1,4 +1,7 @@
-*** I took this fork down in Feb 18 which was forked by https://github.com/yurplan/Lambda_EBS_Backups, and forgot to put it back up.
+*** I took this fork down in Feb 18, which was forked by https://github.com/yurplan/Lambda_EBS_Backups.
+
+If you don't need SNS notifications and it's available in your region, AWS' Lifecycle Manager does the same as this: https://aws.amazon.com/blogs/aws/new-lifecycle-management-for-amazon-ebs-snapshots/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+AmazonWebServicesBlog+%28Amazon+Web+Services+Blog%29
+
 
 Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, with SNS (email, txt...) notifications.
 
