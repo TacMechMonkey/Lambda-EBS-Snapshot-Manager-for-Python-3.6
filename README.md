@@ -29,10 +29,14 @@ If you know a way to modify this to only snapshot volumes attached to running in
  - Add SNS topic and subscribe to it 
  - Checkout CloudWatch logs to confirm nil errors
 
-EBS Volume tagging example:
+#### EBS Volume tagging example:
 
-EBS Volume tagging example
+![Tagging Example](https://github.com/TacMechMonkey/Lambda_EBS_Backups-Python_3-6/blob/master/TaggingExample.PNG)
 
+
+#### SNS Email Example:
+
+![SNS Email Example](https://github.com/TacMechMonkey/Lambda_EBS_Backups-Python_3-6/blob/master/EmailExample.jpg)
 
 #### Lambda config
  - Runtime: Python 3.6
