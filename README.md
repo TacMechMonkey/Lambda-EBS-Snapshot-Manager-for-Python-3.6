@@ -1,3 +1,5 @@
+*** I took this fork down in Feb 18 which was forked by https://github.com/yurplan/Lambda_EBS_Backups, and forgot to put it back up.
+
 Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, with SNS (email, txt...) notifications.
 
  - To tag an EBS volume for backup, add a tag "LambdaBackup" for the daily function, or "LambdaArchive" for the monthly function, with a value of how often to snapshot. Values for "Backup" key: Hourly, 4/day, Daily, Weekly, No
@@ -18,7 +20,9 @@ Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, wit
 
  - If you stop an instance, this script will still snapshot the attached volumes if they're tagged. If previous snapshots have been taken of the volume, you won't be billed for additional storage since snapshots are incremental, it will just clog up your snapshots in AWS.
 
-If you know a way to modify this to only snapshot volumes attached to running instances, please let me know.
+ - If you're using this function for several hundred/thousand volumes, split the volumes into multple functions so they don't time out part way through. Or use a step function.
+
+ - If you're unfamiliar with Python, be cautious editing the inst_list list, msg variable etc that creates the list for the SNS notification. If you tab it incorrectly and create a loop, you'll recieve thousands of emails until the function terminates.
 
 
 
