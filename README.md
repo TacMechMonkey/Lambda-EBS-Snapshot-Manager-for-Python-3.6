@@ -1,6 +1,6 @@
 *** This is a fork of a 2017 repo I took down in Feb 18, which was since forked by https://github.com/yurplan/Lambda_EBS_Backups.
 
-#### AWS has recently introduced the AWS LifeCycle Manager, which does *exactly* what this code does, minus a few things. This code produces:
+#### AWS has recently introduced the AWS LifeCycle Manager, which does *exactly* what this code does, minus a few things. This code can obv be run in all regions and also produces:
  - An email alert of which EBS volumes were snapshotted as below and sends it to you via simple AWS SNS email
  - Maps the snapshot times to your local (non-UTC) time
  - Enables created snapshots to be tagged with meaningful info for future cleanups
