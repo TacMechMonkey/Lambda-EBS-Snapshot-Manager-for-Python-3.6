@@ -107,3 +107,5 @@ Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, wit
         }
     ]
 }
+
+ITC571
