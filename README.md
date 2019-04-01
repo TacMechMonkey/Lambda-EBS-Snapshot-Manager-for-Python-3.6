@@ -1,14 +1,12 @@
 *** This is a fork of a 2017 repo I took down in Feb 18, which was since forked by https://github.com/yurplan/Lambda_EBS_Backups.
 
-#### AWS has recently introduced the AWS LifeCycle Manager, which does *exactly* what this code does, minus a few things. This code can obv be run in all regions and also produces:
+#### AWS has recently introduced the AWS Backup, which is similar minus a few things. Additions:
  - An email alert of which EBS volumes were snapshotted as below and sends it to you via simple AWS SNS email
  - Maps the snapshot times to your local (non-UTC) time
  - Enables created snapshots to be tagged with meaningful info for future cleanups
  - Enables the creation of daily snapshots which *can* be deleted, or monthly archive snapshots with no deletion date
 
 This code is plug and play. If you don't need the SNS notifications, comment out/delete lines 118 to 128 of the daily function.
-
-AWS' Lifecycle Manager is available at: https://aws.amazon.com/blogs/aws/new-lifecycle-management-for-amazon-ebs-snapshots/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+AmazonWebServicesBlog+%28Amazon+Web+Services+Blog%29
 
 #### Deets:
 Use Boto3 and Lambda to schedule the creation and clearing of EBS snapshots, with SNS (email, txt...) notifications.
